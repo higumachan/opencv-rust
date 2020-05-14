@@ -337,6 +337,7 @@ impl<'m, 'c> Generator<'m, 'c> {
 			.collect::<Vec<_>>();
 		args.push("-DOCVRS_PARSING_HEADERS".into());
 		args.push("-includeocvrs_resolve_types.hpp".into());
+		args.push("-stdlib=libstdc++".into());
 		args
 	}
 

@@ -22,11 +22,11 @@ if [[ "$OS_FAMILY" == "windows" ]]; then
 elif [[ "$OS_FAMILY" == "osx" ]]; then
 	CARGO_FEATURES="$CARGO_FEATURES,contrib"
 	# fixme, enable building with xcode libclang
-#	xcode_path="$(xcode-select --print-path)/"
-#	toolchain_path="$xcode_path/Toolchains/XcodeDefault.xctoolchain/"
-#	export LIBCLANG_PATH="$toolchain_path/usr/lib/libclang.dylib"
-#	export CLANG_PATH="$toolchain_path/usr/bin/clang"
-#	export DYLD_LIBRARY_PATH="$toolchain_path/usr/lib/"
+	xcode_path="$(xcode-select --print-path)/"
+	toolchain_path="$xcode_path/Toolchains/XcodeDefault.xctoolchain/"
+	export LIBCLANG_PATH="$toolchain_path/usr/lib/libclang.dylib"
+	export CLANG_PATH="$toolchain_path/usr/bin/clang"
+	export DYLD_LIBRARY_PATH="$toolchain_path/usr/lib/"
 	if [[ "$BREW_OPENCV_VERSION" != "" ]]; then # brew build
 		if [[ "$BREW_OPENCV_VERSION" == "@3" ]]; then
 			export PKG_CONFIG_PATH="/usr/local/opt/opencv@3/lib/pkgconfig"
